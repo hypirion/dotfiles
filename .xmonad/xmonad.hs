@@ -9,7 +9,7 @@ hypirionKeys (XConfig {modMask = mod4Mask}) = M.fromList $
              [((mod4Mask, xK_F4), kill)]
 
 main = xmonad xfceConfig {
-     terminal = "xfce-terminal",
+     terminal = hypirionTerminal,
      modMask = mod4Mask,
      keys = \c -> hypirionKeys c `M.union` keys xfceConfig c
      }
