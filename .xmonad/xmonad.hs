@@ -6,7 +6,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops
 import qualified Data.Map as M
 
-hypirionTerminal = "xfce-terminal"
+hypirionTerminal = "xfce4-terminal"
 
 hypirionKeys (XConfig {modMask = mod4Mask}) = M.fromList $
              [((mod4Mask, xK_F4), kill)]
