@@ -13,4 +13,4 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-alias antlr4='java -jar /usr/local/lib/antlr-4.0-complete.jar'
+alias antlr4='java -jar /usr/local/lib/antlr-4.1-complete.jar'
