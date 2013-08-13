@@ -13,5 +13,4 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-## Dump binaries in bin in order to automatically be able to use'em
-export GOBIN="$HOME/bin"
+alias antlr4='java -jar /usr/local/lib/antlr-4.0-complete.jar'
