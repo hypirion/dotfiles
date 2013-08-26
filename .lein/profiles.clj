@@ -1,5 +1,8 @@
-{:user {:aliases {"math" ["with-profile" "+math" "repl"]
-                  "eval" ["run" "-m" "clojure.main/main" "-e"]}
+{:user {:aliases {"math" ^{:doc "Start a REPL with math dependencies added."}
+                    ["with-profile" "+math" "repl"]
+                  "eval" ^{:doc
+                           "Evaluate a Clojure string with clojure.main/main."}
+                    ["run" "-m" "clojure.main/main" "-e"]}
         :plugins [[lein-shell "0.2.0"]
                   [lein-miditest "0.1.0"]]}
  :math {:dependencies [[org.clojure/math.combinatorics "0.0.2"]
