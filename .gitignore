@@ -6,3 +6,4 @@
 /.lein/self-installs
 /.lein/indices
 /.lein/repl-history
+/.lein/repl-port
