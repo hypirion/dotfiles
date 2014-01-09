@@ -13,3 +13,6 @@ alias optipng-max="optipng -f0-5 -zc6-9 -i0 -zm6-9"
 plugins=(git lein)
 
 source $ZSH/oh-my-zsh.sh
+
+# OPAM configuration
+. /home/jeannikl/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
