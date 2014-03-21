@@ -21,8 +21,6 @@ alias goerrnils='echo $(go_err_nils)'
 plugins=(git lein)
 
 source $ZSH/oh-my-zsh.sh
-# remove stupid rm alias
-unalias rm
 
 # OPAM configuration
 . /home/jeannikl/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
