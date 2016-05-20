@@ -1,11 +1,10 @@
 [Configuration]
-BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-BackgroundDarkness=1.0
-ColorForeground=#dcdcdcdccccc
-ColorBackground=#1f1f1f1f1f1f
-ColorCursor=#8f8fafaf9f9f
-ColorPalette=#3f3f3f3f3f3f;#e8e893939393;#9e9ecece9e9e;#f0f0dfdfafaf;#8c8cd0d0d3d3;#c0c0bebed1d1;#dfdfafaf8f8f;#efefefefefef;#3f3f3f3f3f3f;#e8e893939393;#9e9ecece9e9e;#f0f0dfdfafaf;#8c8cd0d0d3d3;#c0c0bebed1d1;#dfdfafaf8f8f;#efefefefefef
-FontName=Inconsolata Medium 14
+BackgroundDarkness=0.850000
+ColorForeground=#FDF4C1
+ColorBackground=#282828
+ColorCursor=#FDF4C1
+ColorPalette=#1D2021;#D75F5F;#AFAF00;#FFAF00;#87AFAF;#D787AF;#87AF87;#D5C4A1;#665C54;#FB4933;#B8BB26;#FABD2F;#83A598;#D3869B;#8EC07C;#FFFFC8
+FontName=mononoki 8.5
 MiscAlwaysShowTabs=FALSE
 MiscBell=TRUE
 MiscBordersDefault=TRUE
@@ -23,5 +22,9 @@ MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+ShortcutsNoMnemonics=TRUE
+ShortcutsNoMenukey=TRUE
+ColorBold=#87AFAF
+ColorBoldUseDefault=FALSE
+TabActivityColor=#dc322f
 Encoding=UTF-8
-

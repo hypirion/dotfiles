@@ -20,14 +20,12 @@ git submodule update
 
 ### Zsh Goodies
 
-`zsh` needs to have zsh installed, obviously. Before `.zshrc` kicks in, ensure
-that the `Inconsolata` font has been installed on the system and that the
-default terminal is the XFCE terminal. After that, ensure that the following
-commands are issued:
+`zsh` needs to have zsh installed, obviously. Before `.zshrc` kicks in, symlink
+the `.fonts` directory and ensure that the default terminal is the XFCE
+terminal. After that, run the following commands:
 
 ```bash
-mkdir -p ~/.fonts
-ln -s ~/.dotfiles/.fonts/PowerlineSymbols.otf ~/.fonts/PowerlineSymbols.otf
+ln -s ~/.dotfiles/.fonts ~/.fonts
 fc-cache -vf ~/.fonts
 mkdir -p ~/.config/fontconfig/conf.d
 ln -s ~/.dotfiles/.config/fontconfig/conf.d/10-powerline-symbols.conf \
