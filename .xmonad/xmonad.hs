@@ -23,6 +23,6 @@ main = xmonad xfceConfig {
      modMask = mod4Mask,
      startupHook = startup,
      handleEventHook = fullscreenEventHook,
-     layoutHook =  avoidStruts $ hypirionLayout,
+     layoutHook =  smartBorders . avoidStruts $ hypirionLayout,
      keys = \c -> hypirionKeys c `M.union` keys xfceConfig c
      }
