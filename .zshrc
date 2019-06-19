@@ -21,14 +21,13 @@ alias goerrnils='echo $(go_err_nils)'
 setopt NO_BEEP
 
 # Da plugins
-plugins=(git)
+plugins=(git shrink-path)
 
 source $ZSH/oh-my-zsh.sh
 
-# Want gdc to point to the d compiler, not `git diff --cached`.
-unalias gdc
+prompt_dir() {
+  prompt_segment blue $CURRENT_FG "$(shrink_path -t)"
+}
 
 # OPAM configuration
 . /home/jeannikl/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-PATH="$PATH:~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.3/bin:/opt/happy/1.19.4/bin:/opt/alex/3.1.3/bin"
