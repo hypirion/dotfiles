@@ -25,8 +25,31 @@ plugins=(git shrink-path)
 
 source $ZSH/oh-my-zsh.sh
 
+# These things are tuned to agnoster. Note to self: Remember to remove these if
+# I change to a different theme.
+export DEFAULT_USER="$(whoami)"
+
 prompt_dir() {
   prompt_segment blue $CURRENT_FG "$(shrink_path -t)"
+}
+
+prompt_timestamp() {
+  DATE=$( date +"%H:%M:%S" )
+  prompt_segment black default ${DATE}
+}
+
+build_prompt() {
+  RETVAL=$?
+  prompt_status
+  prompt_virtualenv
+  prompt_aws
+  prompt_context
+  prompt_timestamp
+  prompt_dir
+  prompt_git
+  prompt_bzr
+  prompt_hg
+  prompt_end
 }
 
 # OPAM configuration
