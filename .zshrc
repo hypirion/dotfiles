@@ -11,9 +11,6 @@ go_err_nils() {
 
 # Aliases
 alias emacs="emacs -nw"
-alias update="sudo apt-get update"
-alias upgrade="sudo apt-get upgrade"
-alias install="sudo apt-get install"
 alias optipng-max="optipng -f0-5 -zc6-9 -i0 -zm6-9"
 alias goerrnils='echo $(go_err_nils)'
 
