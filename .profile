@@ -15,5 +15,3 @@ fi
 
 export MAKEFLAGS="-j 8 $MAKEFLAGS"
 
-## Golang
-export GOPATH="$HOME/projects/golang"
