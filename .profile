@@ -15,3 +15,4 @@ fi
 
 export MAKEFLAGS="-j 8 $MAKEFLAGS"
 
+/usr/bin/setxkbmap -option "ctrl:nocaps"
