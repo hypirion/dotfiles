@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 export DEFAULT_USER="$(whoami)"
 
 prompt_dir() {
-  prompt_segment blue $CURRENT_FG "$(shrink_path -t)"
+  prompt_segment blue $CURRENT_FG "$(shrink_path -f)"
 }
 
 prompt_timestamp() {
