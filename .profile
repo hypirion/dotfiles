@@ -15,4 +15,7 @@ fi
 
 export MAKEFLAGS="-j 8 $MAKEFLAGS"
 
-/usr/bin/setxkbmap -option "ctrl:nocaps"
+## Golang
+export GOPATH="$HOME/projects/golang"
+
+>>>>>>> parent of 3a0ee65... Force use of go.mod everywhere
