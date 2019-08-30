@@ -12,11 +12,8 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-if [ -d "$HOME/.cabal/bin" ] ; then
-    PATH="$PATH:$HOME/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.4/bin:/opt/happy/1.19.4/bin:/opt/alex/3.1.3/bin"
-fi
 
-export MAKEFLAGS="-j 5 $MAKEFLAGS"
+export MAKEFLAGS="-j 8 $MAKEFLAGS"
 
 ## Golang
 export GOPATH="$HOME/projects/golang"
