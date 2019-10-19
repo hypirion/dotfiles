@@ -21,5 +21,27 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
+# Wrap nvm up to stop it slowing login to a crawl
+if [ -d "$HOME/.nvm" ]; then
+    export NVM_DIR="$HOME/.nvm"
+
+    loadnvm() {
+        source "$NVM_DIR/nvm.sh"
+        return $?;
+    }
+
+     nvm() {
+        unset -f nvm;
+        loadnvm && nvm $*;
+    }
+
+    # Add lowest alphanumeric nvm env to NVM_PATH. This obviously only works
+    # well if you only have a single env available, if the first one is the one
+    # you actually use, or you can symlink "0" to the actual version you use.
+    # (Pick your preferred poison)
+    NVM_PATH="$HOME/.nvm/versions/node/$(ls -1 "$HOME/.nvm/versions/node" | sort | head -n1)/bin"
+    export PATH="$NVM_PATH:$PATH"
+fi
+
 export MAKEFLAGS="-j $(nproc --all) $MAKEFLAGS"
 
