@@ -8,14 +8,16 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-export MAKEFLAGS="-j 8 $MAKEFLAGS"
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
-## Golang
-export GOPATH="$HOME/projects/golang"
+if [ -d "$HOME/.cargo/bin" ] ; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
 
->>>>>>> parent of 3a0ee65... Force use of go.mod everywhere
+export MAKEFLAGS="-j $(nproc --all) $MAKEFLAGS"
