@@ -45,3 +45,6 @@ fi
 
 export MAKEFLAGS="-j $(nproc --all) $MAKEFLAGS"
 
+
+/usr/bin/setxkbmap -option "ctrl:nocaps"
+
