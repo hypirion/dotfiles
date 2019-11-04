@@ -33,6 +33,9 @@ ln -s ~/.dotfiles/.config/fontconfig/conf.d/10-powerline-symbols.conf \
 mkdir -p ~/.config/xfce4/terminal/
 ln -s ~/.dotfiles/.config/xfce4/terminal/terminalrc \
   ~/.config/xfce4/terminal/terminalrc
+mkdir -p ~/.local/share/xfce4/terminal
+ln -s ~/.dotfiles/.local/share/xfce4/terminal/colorschemes \
+  ~/.local/share/xfce4/terminal/colorschemes
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.oh-my-zsh ~/.oh-my-zsh
 chsh -s /bin/zsh
