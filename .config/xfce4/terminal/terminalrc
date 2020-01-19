@@ -1,10 +1,6 @@
 [Configuration]
 BackgroundDarkness=0.850000
-ColorForeground=#FDF4C1
-ColorBackground=#282828
-ColorCursor=#FDF4C1
-ColorPalette=#1D2021;#D75F5F;#AFAF00;#FFAF00;#87AFAF;#D787AF;#87AF87;#D5C4A1;#665C54;#FB4933;#B8BB26;#FABD2F;#83A598;#D3869B;#8EC07C;#FFFFC8
-FontName=mononoki 8.5
+FontName=Cascadia Code PL 12
 MiscAlwaysShowTabs=FALSE
 MiscBell=TRUE
 MiscBordersDefault=TRUE
@@ -24,7 +20,23 @@ MiscHighlightUrls=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ShortcutsNoMnemonics=TRUE
 ShortcutsNoMenukey=TRUE
+Encoding=UTF-8
+MiscBellUrgent=FALSE
+MiscMouseWheelZoom=TRUE
+MiscMiddleClickOpensUri=FALSE
+MiscCopyOnSelect=FALSE
+MiscShowRelaunchDialog=TRUE
+MiscRewrapOnResize=TRUE
+MiscUseShiftArrowsToScroll=FALSE
+MiscSlimTabs=FALSE
+MiscNewTabAdjacent=FALSE
+MiscSearchDialogOpacity=100
+MiscShowUnsafePasteDialog=TRUE
+ColorForeground=#FDF4C1
+ColorBackground=#282828
+ColorCursor=#FDF4C1
+ColorPalette=#1D2021;#D75F5F;#AFAF00;#FFAF00;#87AFAF;#D787AF;#87AF87;#D5C4A1;#665C54;#FB4933;#B8BB26;#FABD2F;#83A598;#D3869B;#8EC07C;#FFFFC8
 ColorBold=#87AFAF
 ColorBoldUseDefault=FALSE
-TabActivityColor=#dc322f
-Encoding=UTF-8
+CommandLoginShell=TRUE
+
