@@ -51,6 +51,34 @@ ln -s ~/.dotfiles/.p10k.zsh ~/.p10k.zsh
 
 When you've reloaded, that should be it.
 
+## Day/night colourscheme change
+
+I have some cronjobs that change the terminal colours by just swapping the
+terminalrc contents with some predefined stuff I made. My crontab for these
+tasks looks like this:
+
+```
+@reboot python3 ~/bin/fix-xfce4-terminal-colours.py
+@hourly python3 ~/bin/fix-xfce4-terminal-colours.py
+```
+
+To get this to run, you must perform the following commands:
+
+```
+mkdir -p ~/bin
+cp ~/.dotfiles/fix-xfce4-terminal-colours.py ~/bin/fix-xfce4-terminal-colours.py
+rm ~/.config/xfce4/terminal/terminalrc
+cp ~/.dotfiles/.config/xfce4/terminal/terminalrc-light \
+  ~/.config/xfce4/terminal/terminalrc
+cp ~/.dotfiles/.config/xfce4/terminal/terminalrc-light \
+  ~/.config/xfce4/terminal/terminalrc-light
+cp ~/.dotfiles/.config/xfce4/terminal/terminalrc-dark \
+  ~/.config/xfce4/terminal/terminalrc-dark
+```
+
+Note that I kill the symlinks because it messes up my .dotfile git repo, and I
+typically tune the font size a bit depending on HiDPI etc.
+
 ## Licenses
 
 Copyright © 2012-2020 Jean Niklas L'orange
