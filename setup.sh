@@ -1,66 +1,83 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+# I tend to do this manually, because there's always one or more steps that just
+# fail.
 
-## TODO: Ensure it is run as root
+sudo apt update && sudo apt full-upgrade && sudo apt install htop git clang curl
 
-apt-get update
-apt-get upgrade
+git config --global user.name "Jean Niklas L'orange"
+git config --global user.email "jeannikl@hypirion.com"
 
 ## Install emacs
 
-apt-get install -y git
-apt-get build-dep -y emacs24
+# Tune /etc/apt/sources.list to include deb-src with them, then run
+
+sudo apt update
+sudo apt build-dep emacs24
 
 cd /opt
-git clone --depth 1 git://git.sv.gnu.org/emacs.git
+sudo git clone --depth 1 git://git.sv.gnu.org/emacs.git
 
 cd emacs
+# enter sudo mode
+sudo su
 ./autogen.sh
-./configure
+./configure CC=clang CFLAGS="-O3"
+export MAKEFLAGS="-j$(nproc)"
 make bootstrap
 make install
 
+# exit sudo mode
+# ctrl-d
+
 ## Install Spotify
 
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
-     --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-echo deb http://repository.spotify.com stable non-free \
-     > /etc/apt/sources.list.d/spotify.list
-apt-get update
-apt-get install -y spotify-client
+# (ugh)
+curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt update && sudo apt install spotify-client
 
 ## Install chrome
 
-tmpdir="$(mktemp -d)"
-cd "$tmpdir"
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-## TOOD: the following command will fail
-dpkg -i google-chrome-stable_current_amd64.deb
-apt-get install -fy
-
-## Haskell Stack
-
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
-     --recv-keys 575159689BEFB442
-echo 'deb http://download.fpcomplete.com/debian jessie main' \
-     > /etc/apt/sources.list.d/fpco.list
-apt-get update
-apt-get install -y stack
 
 ## Xmonad
 
-apt-get install -y xmonad libghc-xmonad-contrib-dev
+# Before you go here, go to keyboard settings and remove so-to-say all Super
+# commands. Then, set up the following super commands:
 
-## TODO: Setup xmonad config here.
-## Notes: use `xmonad --replace && xfce4-panel --restart`
+# Super + P => xfrun4
+# Super + F1 => xfce4-session-logout
+
+sudo apt install xmonad libghc-xmonad-contrib-dev
+
+ln -s ~/.dotfiles/.xmonad ~/.xmonad
+
+# Enter Session and Startup => Application Autostart, and ensure the GNOME
+# secret service + SSH agent is running if you experience download trouble. Then
+# add the following command to get xmonad + xfce4 to run on startup nicely
+
+# Name:XFCE4-panel hack
+# Description To get xmonad + xfce4 to work together nicely
+# Command: sh -c "sleep 4 && xfce4-panel restart"
+# Trigger: on login
+
+# Note: sleep 4 is tuned to the system. Sometimes you can get away with less,
+# feel free to attempt to tune it if you're annoyed by it. Sometimes I need to
+# replace this with the more intricate command sh -c "sleep 4 && killall xfce4-panel && xfce4-panel"
+
+# Name: Xmonad
+# Description: <none>
+# Command: xmonad --replace
+# Trigger: on login
 
 ## Install zsh
 
-apt-get install -y zsh
+sudo apt install zsh
+
+## See additional steps in README.md
 
 
-## Install Java 8
+## Install Java 8 (Optional)
 
 cat > /etc/apt/sources.list.d/java-8-debian.list <<EOF 
 deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
@@ -79,16 +96,7 @@ apt-get install -y bison
 
 ## Docker
 
-apt-get install -y apt-transport-https ca-certificates
-apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+# Eh, just follow https://docs.docker.com/engine/install/ubuntu/
 
-echo 'deb https://apt.dockerproject.org/repo debian-jessie main' \
-     > /etc/apt/sources.list.d/docker.list
-
-apt-get update
-apt-get install -y docker-engine
-service docker start
-
-groupadd docker
-gpasswd -a jeannikl docker
-service docker restart
+# Then run the following command
+sudo usermod -aG docker jeannikl

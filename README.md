@@ -37,11 +37,12 @@ mkdir -p ~/.local/share/xfce4/terminal
 ln -s ~/.dotfiles/.local/share/xfce4/terminal/colorschemes \
   ~/.local/share/xfce4/terminal/colorschemes
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 chsh -s /bin/zsh
 ```
 
-Then, install powerlevel10k from inside zsh (will presumably run with some
-errors):
+Then, install powerlevel10k from inside zsh (will presumably run
+with some errors):
 
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
