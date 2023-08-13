@@ -13,13 +13,20 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias emacs="emacs -nw"
-alias optipng-max="optipng -f0-5 -zc6-9 -i0 -zm6-9"
+alias oxipng-max="oxipng -sao max -Z"
 
 # Remove the beeps
 setopt NO_BEEP
 
 # OPAM configuration
-. /home/jeannikl/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+[[ ! -r /home/jeannikl/.opam/opam-init/init.zsh ]] || source /home/jeannikl/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# fnm
+export PATH=/home/jeannikl/.fnm:$PATH
+eval "`fnm env`"

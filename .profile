@@ -17,36 +17,24 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 if [ -d "$HOME/.cargo/bin" ] ; then
-    export PATH="$HOME/.cargo/bin:$PATH"
+    source "$HOME/.cargo/env"
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
 fi
 
-# Wrap nvm up to stop it slowing login to a crawl
-if [ -d "$HOME/.nvm" ]; then
-    export NVM_DIR="$HOME/.nvm"
+export GOROOT="$HOME/.go1.21.0"
+export GOPATH="$HOME/.gopath"
+export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 
-    loadnvm() {
-        source "$NVM_DIR/nvm.sh"
-        return $?;
-    }
+# nvm is dead, use fnm
 
-     nvm() {
-        unset -f nvm;
-        loadnvm && nvm $*;
-    }
-
-    # Add lowest alphanumeric nvm env to NVM_PATH. This obviously only works
-    # well if you only have a single env available, if the first one is the one
-    # you actually use, or you can symlink "0" to the actual version you use.
-    # (Pick your preferred poison)
-    NVM_PATH="$HOME/.nvm/versions/node/$(ls -1 "$HOME/.nvm/versions/node" | sort | head -n1)/bin"
-    export PATH="$NVM_PATH:$PATH"
-fi
 
 export MAKEFLAGS="-j $(nproc --all) $MAKEFLAGS"
 
 /usr/bin/setxkbmap -option ctrl:nocaps
-xmodmap -e "keycode 37="
 
 
 
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
