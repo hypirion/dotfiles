@@ -1,0 +1,36 @@
+{
+    "layer": "top",
+    "modules-left": ["niri/workspaces", "niri/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "battery", "cpu", "memory", "pulseaudio"],
+    "pulseaudio": {
+    	"format": "  {volume}%",
+		"on-click": "swayosd-client --output-volume mute-toggle",
+		"on-click-right": "flatpak run com.saivert.pwvucontrol"
+    },
+    "niri/workspaces": {
+      "format": "{index}"
+    },
+    "clock": {
+        "format": "{:%d %b %H:%M}",
+        "interval": 1,
+        "tooltip-format": "{:%A %d %B %Y}"
+    },
+    "tray": {
+    	"spacing": 12
+    },
+    "memory": {
+        "format": "  {percentage}%",
+        "interval": 1
+    },
+    "cpu": {
+        "format": "  {usage}%",
+        "interval": 1
+    },
+    "battery": {
+    	"format": "{icon} {capacity}%",
+    	"format-charging": "{icon} {capacity}% ",
+    	"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    	"interval": 1
+    }
+}
