@@ -1,36 +1,90 @@
+// Note: As you see in the styling, I use Font Awesome 6 Free
 {
     "layer": "top",
     "modules-left": ["niri/workspaces", "niri/window"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "battery", "cpu", "memory", "pulseaudio"],
+    // Bluetooth is in the tray, so no worries there
+    "modules-right": ["tray",  "battery", "custom/power", "cpu", "memory", "network", "pulseaudio"],
+
+
     "pulseaudio": {
-    	"format": "  {volume}%",
-		"on-click": "swayosd-client --output-volume mute-toggle",
-		"on-click-right": "flatpak run com.saivert.pwvucontrol"
+        "format": "{icon} {volume}%",
+        "format-muted": " muted",
+        "format-icons": {
+            "headphones": "",
+            "default": ["", "", ""]   // low → high
+        },
+
+        // Clicks & scroll using wpctl (PipeWire)
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",   // mic mute toggle
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+
+        "tooltip-format": "{desc}\n{volume}%"
     },
     "niri/workspaces": {
-      "format": "{index}"
+        "format": "{index}"
     },
     "clock": {
         "format": "{:%d %b %H:%M}",
         "interval": 1,
         "tooltip-format": "{:%A %d %B %Y}"
+
+        // TODO: Add a calendar here.
     },
     "tray": {
-    	"spacing": 12
+    	  "spacing": 12
     },
     "memory": {
-        "format": "  {percentage}%",
+        "format": " {percentage}%",
+        "states": { "warning": 70, "critical": 85 },
         "interval": 1
     },
     "cpu": {
-        "format": "  {usage}%",
+        "format": " {usage}%",
+        "states": { "warning": 70, "critical": 85 },
         "interval": 1
     },
     "battery": {
-    	"format": "{icon} {capacity}%",
-    	"format-charging": "{icon} {capacity}% ",
-    	"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    	"interval": 1
+        "format": "{icon} {capacity}%",
+        "format-plugged":  " {capacity}%",
+        "format-full":     " {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-icons": [                      // 0–100% in ~10 steps
+            "", "",                           // empty
+            "", "",                           // quarter
+            "", "",                           // half
+            "", "",                           // three-quarters
+            "", ""                            // full
+        ],
+        // States used for css, see #battery in styles.
+        "states": { "good": 60, "warning": 30, "critical": 15 },
+        "interval": 5
+    },
+    "network": {
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": " {ipaddr}",
+        "format-disconnected": "",
+        "interval": 3,
+        "on-click": "nm-connection-editor",
+    },
+
+    "custom/power": {
+        "exec": "~/.local/bin/waybar-power-mode.sh print",
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": {
+            "performance": "",
+            "balanced": "",
+            "eco": "",
+            "unknown": ""
+        },
+        "tooltip": true,
+        "interval": 60,
+        "signal": 8,
+        "on-click": "~/.local/bin/waybar-power-mode.sh toggle && pkill -RTMIN+8 waybar",
     }
+
 }

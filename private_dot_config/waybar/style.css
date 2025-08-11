@@ -1,74 +1,101 @@
 window#waybar {
-	background-color: rgba(25, 23, 36, 0.75);
-	color: #cdd6f4;
-	transition-property: background-color;
-	transition-duration: .5s;
-	border-bottom: 1px solid rgba(144, 140, 170, 0.35);
+    background-color: rgba(25, 23, 36, 0.75);
+    color: #cdd6f4;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-bottom: 1px solid rgba(144, 140, 170, 0.35);
 }
 
 * {
-	font-family: "Comic Code";
-	font-size: 10pt;
+    font-family: "Comic Code", "Font Awesome 6 Free", "Font Awesome 6 Brands";
+    font-size: 10pt;
 }
 
 #workspaces button {
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-left: 8px;
-	padding-right: 8px;
-	background-color: transparent;
-	border-radius: 100%;
-	border: 6px #f5c2e7;
-	font-weight: 800;
-	color: #a6adc8; 
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: transparent;
+    border-radius: 100%;
+    border: 6px #f5c2e7;
+    font-weight: 800;
+    color: #a6adc8;
 }
 
 #workspaces button.urgent {
-	color: #fab387;
+    color: #fab387;
 }
 
 #workspaces button:hover {
-	background: rgba(69, 71, 90, 0.65);
-	color: #cdd6f4;
-	border: 12px #f5c2e7;
-	transition: none;
+    background: rgba(69, 71, 90, 0.65);
+    color: #cdd6f4;
+    border: 12px #f5c2e7;
+    transition: none;
 }
 
 #workspaces button.focused {
-	color: #f5c2e7;
-	border: 12px #f5c2e7;
+    color: #f5c2e7;
+    border: 12px #f5c2e7;
 }
 
 label.module {
-	padding: 0 10px 0 10px;
+    padding: 0 10px 0 10px;
 }
 
 box.module button:hover {
-	box-shadow: none;
-	outline: none;
-	font-style: normal;
-	text-shadow: none;
+    box-shadow: none;
+    outline: none;
+    font-style: normal;
+    text-shadow: none;
 }
 
 #tray {
-	padding: 0 8 0 8;
+    padding: 0 8px 0 8px;
 }
 
 menu {
-	background-color: #181825;
-	color: #cdd6f4;
-	border: 1px solid #494d64;
-	padding: 6px;
-	border-radius: 12px;
+    background-color: #181825;
+    color: #cdd6f4;
+    border: 1px solid #494d64;
+    padding: 6px;
+    border-radius: 12px;
 }
 
 #tray menu menuitem:hover {
-	background-color: #1e1e2e;
-	color: #f5c2e7;
-	border-radius: 5px;
+    background-color: #1e1e2e;
+    color: #f5c2e7;
+    border-radius: 5px;
 }
 
 #window {
-	font-weight: 800;
-	padding: 0px 8px 0px 8px;
+    font-weight: 800;
+    padding: 0px 8px 0px 8px;
 }
+
+#custom-power {
+    font-family: "Font Awesome 6 Free", sans-serif;
+    font-weight: 900;         /* FA Solid */
+}
+
+#custom-power:hover, #network:hover, #pulseaudio:hover {
+    background: rgba(69, 71, 90, 0.65);
+    color: #cdd6f4;
+    border: 12px #f5c2e7;
+    transition: none;
+}
+
+#custom-power.performance { color: #e11d48; }
+#custom-power.balanced    { color: #2281C5; }
+#custom-power.eco         { color: #16a34a; }
+
+#battery.good     { color: #22C55E; }
+#battery.warning  { color: #F59E0B; }
+#battery.critical { color: #EF4444; }
+
+#battery.charging               { color: #34D399; }
+#battery.plugged:not(.charging) { color: #2281C5; }
+#battery.full                   { color: #2281C5; }
+
+#cpu.warning, #memory.warning   { color: #F59E0B; }
+#cpu.critical, #memory.critical { color: #EF4444; }
