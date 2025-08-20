@@ -3,6 +3,7 @@
 import sys
 import os
 import subprocess
+from datetime import datetime
 from pathlib import Path
 
 def env_path_or_default(var, default):
@@ -13,7 +14,14 @@ def env_path_or_default(var, default):
 xdg_config_home = env_path_or_default("XDG_CONFIG_HOME",
                                       Path.home() / ".config")
 
-## TODO: Implement time detection here. Should be straightforward.
+# Note: Probably doesn't automatically infer time zones because why
+# would it?
+def time_theme():
+    h = datetime.now().hour
+    if h < 6 or 20 <= h:
+        return "dark"
+    else:
+        return "light"
 
 def set_alacritty(theme):
     dir = xdg_config_home / "alacritty"
@@ -40,5 +48,8 @@ if __name__ == '__main__':
         print('when by-time is passed in, it will be set to a dark theme between 20:00 and 06:00')
         sys.exit(1)
     theme = sys.argv[1]
+    if theme == 'by-time':
+        theme = time_theme()
+        print(theme)
     set_theme(theme)
 
