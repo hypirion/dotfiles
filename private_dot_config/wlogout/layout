@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "swaylock-plugin",
     "text" : "Lock",
     "keybind" : "l",
 }

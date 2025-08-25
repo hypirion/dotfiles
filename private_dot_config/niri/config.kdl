@@ -418,9 +418,10 @@ binds {
   // Suggested binds for running programs: terminal, app launcher, screen locker.
   Mod+Shift+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
   Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-  Ctrl+Alt+Delete hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock" "-i" "~/Pictures/wallpapers/swaylock.jpg"; }
+  Ctrl+Alt+Delete hotkey-overlay-title="Lock the Screen" { spawn "swaylock-plugin"; }
 
   Mod+B hotkey-overlay-title="Toggle waybar" { spawn "killall" "-SIGUSR1" "waybar"; }
+  Mod+Escape hotkey-overlay-title="Open logout menu" { spawn "wlogout"; }
 
   // Example volume keys mappings for PipeWire & WirePlumber.
   // The allow-when-locked=true property makes them work even when the session is locked.
@@ -646,7 +647,7 @@ binds {
   //
   // The allow-inhibiting=false property can be applied to other binds as well,
   // which ensures niri always processes them, even when an inhibitor is active.
-  Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+  // Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
   // The quit action will show a confirmation dialog to avoid accidental exits.
   Mod+Shift+E { quit; }

@@ -1,0 +1,17 @@
+command=mpvpaper '*' -o 'no-audio loop-file=inf keep-open=yes no-osc no-osd-bar no-term-osd hwdec=auto-safe video-sync=display-resample' /home/jeannikl/.local/share/wallpaper/night-lock.mp4
+
+# Command for different video per output
+# command-each=mpvpaper eDP-1 filepath
+# command-each=mpvpaper HDMI-A-1 filepath
+
+font=ComicCode Nerd Font
+grace=3
+
+# Ring indicator style
+indicator-radius=120
+indicator-thickness=10
+
+# Ring colors (adjust to taste)
+ring-color=ffffff
+key-hl-color=88c0d0
+inside-color=000000aa
