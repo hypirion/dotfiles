@@ -8,10 +8,10 @@ history = 100000
 multiplier = 3
 
 [font]
-normal.family = "Comic Code"
-bold.family = "Comic Code"
-italic.family = "Comic Code"
-bold_italic.family = "Comic Code"
+normal.family = "ComicCode Nerd Font"
+bold.family = "ComicCode Nerd Font"
+italic.family = "ComicCode Nerd Font"
+bold_italic.family = "ComicCode Nerd Font"
 
 size = 12.0
 

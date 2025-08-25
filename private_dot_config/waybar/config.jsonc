@@ -64,7 +64,7 @@
         "interval": 5
     },
     "network": {
-        "format-wifi": " {signalStrength}%",
+        "format-wifi": "  {signalStrength}%",
         "format-ethernet": " {ipaddr}",
         "format-disconnected": "",
         "interval": 3,
