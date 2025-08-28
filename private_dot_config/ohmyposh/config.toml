@@ -1,0 +1,100 @@
+# This is the dark setup, the light setup will come some other day I guess
+
+version = 3
+final_space = true
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = false
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    template = '<#CB4B16>┏[</><#FF0000></><#CB4B16>]</>'
+    foreground = '#ffffff'
+    type = 'text'
+    style = 'plain'
+
+  [[blocks.segments]]
+    template = '<#CB4B16>[</>{{ .HostName }}<#CB4B16>]</>'
+    foreground = '#ffffff'
+    type = 'session'
+    style = 'plain'
+
+  [[blocks.segments]]
+    ## TODO: This template is... a piece. I want to colour the status
+    ## icons with green, red and yellow for additions, removals and
+    ## modifications though. But that is gonna be a looooong template.
+    template = "<#CB4B16>[</>{{ if .Detached }}{{ substr 0 7 .Commit.Sha }}{{ else }}{{ .HEAD }}{{ end }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <b> {{ .Staging.String }}</b>{{ end }}<#CB4B16>]</>"
+    foreground = '#ffffff'
+    type = 'git'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      fetch_status = true            # needed for Working/Staging counts
+      branch_template = "{{ trunc 28 .Branch }}"
+
+      [blocks.segments.properties.status_formats]
+        Unmerged = "<#E06C75>x%d</>"
+        Untracked = "<#E5C07B>?%d</>"
+        Added = "<#98C379>+%d</>"
+        Modified = "<#E5C07B>~%d</>"
+        Deleted = "<#E06C75>-%d</>"
+
+  [[blocks.segments]]
+    template = '<#CB4B16>[</><#CB4B16>]</>'
+    foreground = '#ffffff'
+    type = 'root'
+    style = 'plain'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'right'
+
+  [[blocks.segments]]
+    type = "executiontime"
+    style = "plain"
+    foreground = "#ffffff"
+    template = "<#CB4B16>[</>󱙷 {{ .FormattedMs }}<#CB4B16>]</>"
+
+    [blocks.segments.properties]
+      threshold = 500
+      style = "austin"
+
+  [[blocks.segments]]
+    template = '<#CB4B16>[x</>{{ reason .Code }}<#CB4B16>]</>'
+    foreground = '#ffffff'
+    type = 'status'
+    style = 'plain'
+
+  [[blocks.segments]]
+    type = 'time'
+    style = 'plain'
+    foreground = "#ffffff"
+    template = "<#CB4B16>[</>{{ .CurrentDate | date .Format }}<#CB4B16>]</>"
+
+    [blocks.segments.properties]
+    time_format = "15:04:05"
+
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '<#CB4B16>┖[</>{{ .Path }}<#CB4B16>]></>'
+    foreground = '#ffffff'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      style = 'unique'
+
+      [blocks.segments.properties.mapped_locations]
+      "~/.config" = ' '
+      "~/code" = ' '

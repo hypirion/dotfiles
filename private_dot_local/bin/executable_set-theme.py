@@ -50,6 +50,6 @@ if __name__ == '__main__':
     theme = sys.argv[1]
     if theme == 'by-time':
         theme = time_theme()
-        print(theme)
+        print(f'Inferred time theme is {theme}')
     set_theme(theme)
 
