@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="613"
+   height="613.80713"
+   viewBox="0 0 18.39 18.414214"
+   fill="none"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="shutdown.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs5" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.9075"
+     inkscape:cx="283.19559"
+     inkscape:cy="379.61433"
+     inkscape:window-width="1210"
+     inkscape:window-height="1076"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg5" />
+  <path
+     d="m 13.5,17.414214 c 0,-1.3261 -0.5268,-2.5979 -1.4645,-3.5355 -0.9376,-0.9377 -2.2094,-1.4645 -3.5355,-1.4645 -1.3261,0 -2.59785,0.5268 -3.53553,1.4645 -0.93769,0.9376 -1.46447,2.2094 -1.46447,3.5355 h 5 z"
+     fill="#222222"
+     id="path1"
+     style="fill:#ffffff;stroke:#ffffff" />
+  <path
+     d="m 14,11.914214 2,-2"
+     stroke="#222222"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="path2"
+     style="fill:#ffffff;stroke:#ffffff" />
+  <path
+     d="m 1.5,17.414214 h 14"
+     stroke="#222222"
+     stroke-width="2"
+     stroke-linecap="square"
+     id="path3"
+     style="fill:#ffffff;stroke:#ffffff" />
+  <path
+     d="m 1,9.914214 2,2"
+     stroke="#222222"
+     stroke-width="2"
+     stroke-linecap="round"
+     id="path4"
+     style="fill:#ffffff;stroke:#ffffff" />
+  <path
+     d="M 8.5,1.414214 9.2071,0.707104 8.5,0 7.7929,0.707104 Z m -1,8.5 c 0,0.5523 0.4477,1 1,1 0.5523,0 1,-0.4477 1,-1 z m 4.7071,-6.20711 -3,-3 -1.4142,1.41422 3,3 z m -4.4142,-3 -3.00001,3 1.41422,1.41422 2.99999,-3 z M 7.5,1.414214 v 8.5 h 2 v -8.5 z"
+     fill="#222222"
+     id="path5"
+     style="fill:#ffffff" />
+</svg>
