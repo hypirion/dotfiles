@@ -78,7 +78,7 @@ menu {
     font-weight: 900;         /* FA Solid */
 }
 
-#custom-power:hover, #network:hover, #pulseaudio:hover {
+#custom-power:hover, #network:hover, #pulseaudio:hover, #clock:hover {
     background: rgba(69, 71, 90, 0.65);
     color: #cdd6f4;
     border: 12px #f5c2e7;

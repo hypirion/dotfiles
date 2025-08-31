@@ -1,4 +1,4 @@
-// Note: As you see in the styling, I use Font Awesome 6 Free
+// I use NerdFont as font. May want to replace some icons with SVG ones.
 {
     "layer": "top",
     "modules-left": ["niri/workspaces", "niri/window"],
@@ -30,9 +30,9 @@
     "clock": {
         "format": "{:%d %b %H:%M}",
         "interval": 1,
-        "tooltip-format": "{:%A %d %B %Y}"
+        "tooltip": false,
 
-        // TODO: Add a calendar here.
+        "on-click": "eww open --toggle calendar"
     },
     "tray": {
     	  "spacing": 12

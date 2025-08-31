@@ -1,0 +1,31 @@
+.cal-wrapper {
+    border: 2px solid red;
+}
+
+.cal {
+    font-family: "ComicCode Nerd Font";
+    font-size: 12pt;
+    background-color: rgb(39, 36, 56);
+    color: #cdd6f4;
+    border: 0;
+}
+
+.cal.header  {
+    background-color: rgb(30, 28, 44);
+}
+
+
+.cal:selected {
+    background-color: #cb4b16;
+    color: rgb(54, 50, 78);
+    font-weight: bold;
+}
+
+.cal.highlight {
+    color: #CCA3A3;
+    font-weight: bold;
+}
+
+.cal:indeterminate {
+    color: rgb(108, 99, 156);
+}

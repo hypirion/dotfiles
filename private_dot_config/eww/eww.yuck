@@ -1,0 +1,21 @@
+(defpoll calendar-day :interval "20h" "date '+%d'")
+(defpoll calendar-year :interval "20h" "date '+%Y'")
+
+(defwidget cal []
+  (box :class "cal-wrapper"
+       :orientation "v"
+       (calendar :class "cal"
+                 :show-day-names true
+                 :show-week-numbers true
+                 :day calendar-day
+                 :year calendar-year)))
+
+(defwindow calendar
+  :monitor 0
+  :stacking "fg"
+  :wm-ignore true
+  :geometry (geometry :anchor "top center"
+                      :width "20%")
+  ;; Having a revealer here would be neato, but that really only works
+  ;; well with a topbar made in eww.. and I don't have that yet.
+  (cal))
