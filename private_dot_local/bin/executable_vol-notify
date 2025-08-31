@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Usage: vol-notify up|down|mute
+set -euo pipefail
+
+# Adjust volume (PipeWire)
+case "${1:-}" in
+    up)   wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ ;;
+    down) wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1- ;;
+    mute) wpctl set-mute   @DEFAULT_AUDIO_SINK@ toggle ;;
+    *) echo "Usage: $0 {up|down|mute}" >&2; exit 2 ;;
+esac
+
+# Read current state
+out="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+vol_f="$(printf '%s' "$out" | awk '{print $2}')"    # 0.00..1.00
+muted="$(grep -q MUTED <<<"$out" && echo 1 || echo 0)"
+pct="$(awk -v v="$vol_f" 'BEGIN{printf("%d", v*100+0.5)}')"
+
+
+# Replace the same notification
+nidfile="/tmp/vol-notify.nid"
+nid="$( [ -f "$nidfile" ] && cat "$nidfile" || echo 0 )"
+nid="$(notify-send -p -r "$nid" -a "Audio" \
+      -u low -t 1200 -e \
+      -h "int:value:${pct}" \
+      "Volume" "$([ "$muted" = 1 ] && echo "Muted" || echo "${pct}%")")"
+echo "$nid" > "$nidfile"

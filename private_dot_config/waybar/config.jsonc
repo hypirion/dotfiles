@@ -76,9 +76,9 @@
         "return-type": "json",
         "format": "{icon}",
         "format-icons": {
-            "performance": "",
-            "balanced": "",
-            "eco": "",
+            "performance": "󱟕",
+            "balanced": "󱟓",
+            "eco": "󰗢",
             "unknown": ""
         },
         "tooltip": true,
