@@ -9,7 +9,7 @@
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": " muted",
+        "format-muted": " [M]",
         "format-icons": {
             "headphones": "",
             "default": ["", "", ""]   // low → high
@@ -38,20 +38,20 @@
     	  "spacing": 12
     },
     "memory": {
-        "format": "󰍛 {percentage}%",
+        "format": "󰍛 {percentage:>3}%",
         "states": { "warning": 70, "critical": 85 },
         "interval": 1
     },
     "cpu": {
-        "format": " {usage}%",
+        "format": " {usage:>3}%",
         "states": { "warning": 70, "critical": 85 },
         "interval": 1
     },
     "battery": {
-        "format": "{icon} {capacity}%",
-        "format-plugged":  " {capacity}%",
-        "format-full":     " {capacity}%",
-        "format-charging": " {capacity}%",
+        "format": "{icon} {capacity:>2}%",
+        "format-plugged":  " {capacity:>2}%",
+        "format-full":     " {capacity:>2}%",
+        "format-charging": " {capacity:>2}%",
         "format-icons": [                      // 0–100% in ~10 steps
             "", "",                           // empty
             "", "",                           // quarter
@@ -64,7 +64,7 @@
         "interval": 5
     },
     "network": {
-        "format-wifi": "  {signalStrength}%",
+        "format-wifi": "  {signalStrength:>2}%",
         "format-ethernet": " {ipaddr}",
         "format-disconnected": "",
         "interval": 3,
