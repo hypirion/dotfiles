@@ -38,7 +38,7 @@
     	  "spacing": 12
     },
     "memory": {
-        "format": " {percentage}%",
+        "format": "󰍛 {percentage}%",
         "states": { "warning": 70, "critical": 85 },
         "interval": 1
     },
