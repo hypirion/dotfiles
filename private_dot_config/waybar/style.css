@@ -73,12 +73,7 @@ menu {
     padding: 0px 8px 0px 8px;
 }
 
-#custom-power {
-    font-family: "Font Awesome 6 Free", sans-serif;
-    font-weight: 900;         /* FA Solid */
-}
-
-#custom-power:hover, #network:hover, #pulseaudio:hover, #clock:hover {
+#language:hover, #custom-power:hover, #network:hover, #pulseaudio:hover, #clock:hover {
     background: rgba(69, 71, 90, 0.65);
     color: #cdd6f4;
     border: 12px #f5c2e7;

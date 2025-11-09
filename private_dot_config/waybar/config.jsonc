@@ -4,7 +4,7 @@
     "modules-left": ["niri/workspaces", "niri/window"],
     "modules-center": ["clock"],
     // Bluetooth is in the tray, so no worries there
-    "modules-right": ["tray",  "battery", "custom/power", "cpu", "memory", "network", "pulseaudio"],
+    "modules-right": ["tray",  "battery", "niri/language", "custom/power", "cpu", "memory", "network", "pulseaudio"],
 
 
     "pulseaudio": {
@@ -26,6 +26,13 @@
     },
     "niri/workspaces": {
         "format": "{index}"
+    },
+    "niri/language": {
+        "format": "{}",
+        "format-no": "🇳🇴",
+        "format-en": "🇺🇸",
+
+        "on-click": "niri msg action switch-layout next"
     },
     "clock": {
         "format": "{:%d %b %H:%M}",
