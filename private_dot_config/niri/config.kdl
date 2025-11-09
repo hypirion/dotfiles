@@ -276,6 +276,8 @@ spawn-at-startup "mako"
 spawn-at-startup "waybar"
 spawn-at-startup "eww daemon"
 
+spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock-plugin -f" "before-sleep" "swaylock-plugin -f"
+
 
 hotkey-overlay {
   // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
