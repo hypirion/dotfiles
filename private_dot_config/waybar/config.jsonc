@@ -68,7 +68,7 @@
         "format-ethernet": " {ipaddr}",
         "format-disconnected": "",
         "interval": 3,
-        "on-click": "nm-connection-editor",
+        "on-click": "nmcli dev wifi rescan && ghostty -e nmtui",
     },
 
     "custom/power": {
