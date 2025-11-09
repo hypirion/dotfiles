@@ -1,4 +1,4 @@
-command=mpvpaper '*' -o 'no-audio loop-file=inf keep-open=yes no-osc no-osd-bar no-term-osd hwdec=auto-safe video-sync=display-resample' /home/jeannikl/.local/share/wallpaper/night-lock.mp4
+command=mpvpaper '*' -o 'no-audio loop-file=inf keep-open=yes no-osc no-osd-bar no-term-osd hwdec=auto-safe video-sync=display-resample panscan=1' /home/jeannikl/.local/share/wallpaper/white-smoke.mp4
 
 # Command for different video per output
 # command-each=mpvpaper eDP-1 filepath
