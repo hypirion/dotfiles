@@ -79,7 +79,7 @@
     },
     "network": {
         "format-wifi": "  {signalStrength:>2}%",
-        "format-ethernet": " {ipaddr}",
+        "format-ethernet": "󰈀 {ipaddr}",
         "format-disconnected": "",
         "interval": 3,
         "on-click": "nmcli dev wifi rescan && ghostty -e nmtui",
