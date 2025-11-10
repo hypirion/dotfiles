@@ -97,4 +97,5 @@ final_space = true
 
       [blocks.segments.properties.mapped_locations]
       "~/.config" = ' '
-      "~/code" = ' '
+      "~/code" = '󰈮'
+      "~/work" = '🐮'
