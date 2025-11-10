@@ -73,7 +73,7 @@ menu {
     padding: 0px 8px 0px 8px;
 }
 
-#language:hover, #custom-power:hover, #network:hover, #pulseaudio:hover, #clock:hover {
+#language:hover, #custom-power:hover, #custom-vpn:hover, #network:hover, #pulseaudio:hover, #clock:hover {
     background: rgba(69, 71, 90, 0.65);
     color: #cdd6f4;
     border: 12px #f5c2e7;
@@ -83,6 +83,13 @@ menu {
 #custom-power.performance { color: #e11d48; }
 #custom-power.balanced    { color: #2281C5; }
 #custom-power.eco         { color: #16a34a; }
+
+#custom-vpn {
+    font-size: 1.5em;
+}
+
+#custom-vpn.connected { color: #22C55E }
+#custom-vpn.disconnected { color: rgba(205, 214, 244, 0.5) }
 
 #battery.good     { color: #22C55E; }
 #battery.warning  { color: #F59E0B; }
