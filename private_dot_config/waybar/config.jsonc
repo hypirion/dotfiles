@@ -27,6 +27,13 @@
     "niri/workspaces": {
         "format": "{index}"
     },
+    "niri/window": {
+        "format": "{}",
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "  $1",
+            "(.*) - GNU Emacs at (.*)": " $1"
+        }
+    },
     "niri/language": {
         "format": "{}",
         "format-no": "🇳🇴",
