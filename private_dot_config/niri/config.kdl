@@ -400,10 +400,12 @@ binds {
   // Suggested binds for running programs: terminal, app launcher, screen locker.
   Mod+Shift+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
   Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+
+  // TODO: Make this into a lock-then-power-off-monitor
   Ctrl+Alt+Delete hotkey-overlay-title="Lock the Screen" { spawn "swaylock-plugin"; }
 
   Mod+B hotkey-overlay-title="Toggle waybar" { spawn "killall" "-SIGUSR1" "waybar"; }
-  Mod+Escape hotkey-overlay-title="Open logout menu" { spawn "wlogout"; }
+  Mod+F1 hotkey-overlay-title="Open logout menu" { spawn "wlogout"; }
 
   // Example volume keys mappings for PipeWire & WirePlumber.
   // The allow-when-locked=true property makes them work even when the session is locked.
@@ -630,9 +632,6 @@ binds {
   // The allow-inhibiting=false property can be applied to other binds as well,
   // which ensures niri always processes them, even when an inhibitor is active.
   // Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-
-  // The quit action will show a confirmation dialog to avoid accidental exits.
-  Mod+Shift+E { quit; }
 
   // Powers off the monitors. To turn them back on, do any input like
   // moving the mouse or pressing any other key.
